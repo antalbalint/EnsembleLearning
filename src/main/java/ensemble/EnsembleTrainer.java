@@ -106,7 +106,7 @@ class EnsembleTrainer{
         search.setDataset(dataset);
         search.setNumFolds(cvFolds);
         search.setFusionType(fusionType);
-        List<Classifier> optimalSet = search.select();
+        optimalSet = search.select();
         for (int i = 0; i < cvFolds; ++i) {
             Instances trainDataset = dataset.trainCV(cvFolds, i);
             train(trainDataset);
